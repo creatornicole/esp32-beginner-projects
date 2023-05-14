@@ -1,5 +1,8 @@
 # ESP32 Beginner Projects
 
+## write-db
+[Documentation in Progress...]
+
 ## References
 2023-05-10
 [Getting Started with the ESP32 Development Board](https://randomnerdtutorials.com/getting-started-with-esp32/) \
