@@ -31,6 +31,10 @@ ESP32 + MySQL: \
 HTTP GET and HTTP POST: \
 [ESP32 HTTP GET and HTTP POST with Arduino IDE (JSON, URL Encoded, Text)](https://randomnerdtutorials.com/esp32-http-get-post-arduino/) \
 [ESP32 IoT](https://electronoobs.com/eng_arduino_tut172.php) \
+[How to use ArduinoJson with HTTPClient?](https://arduinojson.org/v6/how-to/use-arduinojson-with-httpclient/) \
+[Making a http POST request using Arduino](https://stackoverflow.com/questions/3677400/making-a-http-post-request-using-arduino) \
+[ESP32/ESP8266 Insert Data into MySQL Database using PHP and Arduino IDE](https://georgochr.sites.sch.gr/?page_id=2087) \
+[A reliable Arduino Webserver and how to POST data](https://werner.rothschopf.net/202003_arduino_webserver_post_en.htm) \
 
 ESP32 + LoRa: \
 [ESP32 with LoRa using Arduino IDE – Getting Started](https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/) \
