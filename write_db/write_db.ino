@@ -1,52 +1,67 @@
-/**************************************************************************
-Write to DB
-With help from: https://esp32io.com/tutorials/esp32-mysql?utm_content=cmp-true
-
-Author: Nicole Gottschall
-Date: 2023-05-13
- **************************************************************************/
-
- /*
- * This ESP32 code is created by esp32io.com
- *
- * This ESP32 code is released in the public domain
- *
- * For more detail (instruction and wiring diagram), visit https://esp32io.com/tutorials/esp32-mysql
- */
-
 #include <WiFi.h>
-#include <HTTPClient.h> 
+#include <HTTPClient.h>
 
-//Wifi Setup
+#include <Wire.h>
+
+//network credentials
 const char WIFI_SSID[] = ""; //paste in your WIFI SSID
 const char WIFI_PASSWORD[] = ""; //paste in your WIFI PASSWORD
 
+//Domain name and URL path or IP address with path
+const char* serverName = "http://arduinojson.org/example.json";
+
+// Keep this API Key value to be compatible with the PHP code provided in the project page. 
+// If you change the apiKeyValue value, the PHP file also needs to have the same key 
+String apiKeyValue = "tPmAT5Ab3j7F9";
+
 void setup() {
   Serial.begin(9600);
-
-  //Connect to WiFi
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  
+  WiFi.begin(ssid, password);
   Serial.println("Connecting");
-  while(WiFi.status() != WL_CONNECTED) {
+  while(WiFi.status() != WL_CONNECTED) { 
     delay(500);
     Serial.print(".");
   }
   Serial.println("");
   Serial.print("Connected to WiFi network with IP Address: ");
-  Serial.print(WiFi.localIP());
-
-  //HTTP
-  WiFiClient client;
-  HTTPClient http;   
-  http.begin(client, "http://arduinojson.org/example.json");
-  int httpCode = http.GET();
-
-  Serial.print(http.getString());
-
-  //free ressources
-  http.end();
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  
+  //Check WiFi connection status
+  if(WiFi.status()== WL_CONNECTED){
+    WiFiClient client;
+    HTTPClient http;
+    
+    // Domain name with URL path or IP address with path
+    http.begin(client, serverName);
+    
+    //content-type header specification
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    // Prepare HTTP POST request data
+    String httpRequestData = "api_key=" + apiKeyValue + "&temperature=34.5";
+    Serial.print("httpRequestData: ");
+    Serial.println(httpRequestData);
+
+    // Send HTTP POST request
+    int httpResponseCode = http.POST(httpRequestData);
+        
+    if (httpResponseCode>0) {
+      Serial.print("HTTP Response code: ");
+      Serial.println(httpResponseCode);
+    }
+    else {
+      Serial.print("Error code: ");
+      Serial.println(httpResponseCode);
+    }
+    // Free resources
+    http.end();
+  }
+  else {
+    Serial.println("WiFi Disconnected");
+  }
+  //Send an HTTP POST request every 30 seconds
+  delay(30000);  
 }
