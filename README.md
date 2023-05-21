@@ -26,14 +26,14 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 8. Go to Tools > Board and check that you have ESP32 boards available
 
 ### Select right ESP32
-1. Tools > Boards, scroll down to the ESP32 section and select the name of your ESP32 board (in my case: )
+1. Tools > Boards, scroll down to the ESP32 section and select the name of your ESP32 board (in my case: TTGO LoRa32-OLED)
 2. Tools > Port, select a COM port available (For help see: [How can I easily see which COM port is used by Arduino?](https://arduino.stackexchange.com/questions/21771/how-can-i-easily-see-which-com-port-is-used-by-arduino))
 
 ### Set Up XAMPP Server
 1. Install [XAMPP Server](https://www.apachefriends.org/download.html) on your local machine
 2. Start MySQL Database and Apache Web Server Service via XAMPP Control Panel
 
-#### Create Local Database
+### Create Local Database
 1. Start MySQL Database and Apache Web Server Service via XAMPP Control Panel
 2. Navigate to localhost/phpmyadmin in browser
 3. Click on New
