@@ -1,7 +1,50 @@
 # ESP32 Beginner Projects
 
 ## write-db
-[Documentation in Progress...]
+
+- ESP32 Development: 
+    - development with Arduino IDE
+- Insert Data into Database:
+    - XAMPP Server
+    - PHP
+    - HTML
+    - JSON
+
+### Installation of Arduino IDE
+1. [Install Java](http://java.com/download) (if you don't have it already)
+2. [Download Arduino IDE](https://www.arduino.cc/en/Main/Software)
+3. Run executable file called arduino.exe 
+
+### Add Support for the ESP32 in Arduino IDE
+1. Go to File > Preferences
+2. Enter following into "Additional Board Manager URLs" field (will add support for ESP32 and ESP8266 boards) \
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
+4. Click "OK" button
+5. Open Boards Manager (Tools > Board > Boards Manager...)
+6. Search for ESP32 and install "ESP32 by Espressif Systems"
+7. Restart Arduino IDE
+8. Go to Tools > Board and check that you have ESP32 boards available
+
+### Select right ESP32
+1. Tools > Boards, scroll down to the ESP32 section and select the name of your ESP32 board (in my case: )
+2. Tools > Port, select a COM port available (For help see: [How can I easily see which COM port is used by Arduino?](https://arduino.stackexchange.com/questions/21771/how-can-i-easily-see-which-com-port-is-used-by-arduino))
+
+### Set Up XAMPP Server
+1. Install [XAMPP Server](https://www.apachefriends.org/download.html) on your local machine
+2. Start MySQL Database and Apache Web Server Service via XAMPP Control Panel
+
+#### Create Local Database
+1. Start MySQL Database and Apache Web Server Service via XAMPP Control Panel
+2. Navigate to localhost/phpmyadmin in browser
+3. Click on New
+4. Type in the Name of your Database
+4. Click Create Button
+5. Create table
+
+[Further Introduction to: Insert Form Data into a Database](https://dev.to/anthonys1760/how-to-insert-form-data-into-a-database-using-html-php-2e8)
+
+
+
 
 ## References
 2023-05-10 \
