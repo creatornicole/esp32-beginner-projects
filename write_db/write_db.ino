@@ -4,11 +4,11 @@
 #include <Wire.h>
 
 //network credentials
-const char WIFI_SSID[] = ""; //paste in your WIFI SSID
-const char WIFI_PASSWORD[] = ""; //paste in your WIFI PASSWORD
+const char* ssid     = "MagentaWLAN-BHS8";
+const char* password = "20907683879274549283";
 
 //Domain name and URL path or IP address with path
-const char* serverName = "http://arduinojson.org/example.json";
+const char* serverName = "192.168.2.33/insert_temp.php";
 
 // Keep this API Key value to be compatible with the PHP code provided in the project page. 
 // If you change the apiKeyValue value, the PHP file also needs to have the same key 
