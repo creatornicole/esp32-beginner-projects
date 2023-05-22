@@ -2,8 +2,8 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "MagentaWLAN-BHS8";
-const char* password =  "20907683879274549283";
+const char* ssid = "";
+const char* password =  "";
 
 void setup() {
   Serial.begin(9600);
